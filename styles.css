@@ -1939,8 +1939,19 @@ button, input, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE BREAKPOINTS
+   15. RESPONSIVE BREAKPOINTS & MOBILE OVERFLOW FIXES
    -------------------------------------------------------------------------- */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+.bg-grid-pattern, .bg-radial-glow {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -2015,6 +2026,21 @@ button, input, textarea {
     font-size: 2.25rem;
   }
 
+  .hero-cta {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .float-1 {
+    top: -10px;
+    right: 5px;
+  }
+
+  .float-2 {
+    bottom: -10px;
+    left: 5px;
+  }
+
   .skills-grid, .services-grid, .about-cards-col {
     grid-template-columns: 1fr;
   }
@@ -2047,6 +2073,121 @@ button, input, textarea {
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-greeting {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .profile-showcase-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .showcase-stats-row {
+    gap: 0.4rem;
+  }
+
+  .stat-box {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .stat-num {
+    font-size: 0.85rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    padding-left: 35px;
+  }
+
+  .timeline-line {
+    left: 10px;
+  }
+
+  .timeline-dot-wrapper {
+    left: 0;
+  }
+
+  .timeline-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .timeline-badge-wrap {
+    gap: 0.3rem;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .project-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .modal-container {
+    width: 94%;
+    padding: 1.25rem;
+    margin: 0.5rem;
+  }
+
+  .contact-info-card, .contact-form-col .contact-form {
+    padding: 1.25rem 1rem;
+  }
+}
+
 /* Brand Logo Styles */
 .logo-mark {
   width: 42px;
@@ -2071,4 +2212,17 @@ button, input, textarea {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+/* Scroll Reveal Zoom-In Effect */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.92) translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
