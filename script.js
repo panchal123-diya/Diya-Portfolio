@@ -343,4 +343,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   sections.forEach(sec => sectionObserver.observe(sec));
+
+  /* --------------------------------------------------------------------------
+     9. SCROLL REVEAL ZOOM-IN OBSERVER FOR MAIN CARDS
+     -------------------------------------------------------------------------- */
+  const revealTargets = document.querySelectorAll('.profile-showcase-card, .info-card, .skill-category-card, .timeline-content, .project-card, .service-card, .career-cta-card, .contact-info-card, .contact-form, .reveal-zoom');
+
+  revealTargets.forEach((el, index) => {
+    el.classList.add('reveal-zoom');
+    // Stagger transition slight delay for grids
+    if (el.classList.contains('skill-category-card') || el.classList.contains('info-card') || el.classList.contains('service-card')) {
+      el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('revealed'));
+  }
 });
