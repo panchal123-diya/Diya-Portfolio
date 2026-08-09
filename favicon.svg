@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Shield / Rounded Rectangle -->
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="16" />
+  
+  <!-- Subtle inner ambient circle -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+
+  <!-- Monogram DP Typography -->
+  <g transform="translate(0, 0)">
+    <!-- Letter D -->
+    <path d="M 140 140 L 220 140 C 285 140 330 180 330 256 C 330 332 285 372 220 372 L 140 372 Z" fill="none" stroke="url(#accentGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 140 140 L 140 372" stroke="#ffffff" stroke-width="36" stroke-linecap="round" />
+
+    <!-- Code Spark / Accent dot -->
+    <circle cx="370" cy="150" r="22" fill="url(#glowGrad)" />
+  </g>
+</svg>

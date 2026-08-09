@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diya Panchal | MSc IT Student & Aspiring Software Developer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Diya Panchal, an MSc IT student and aspiring software developer skilled in Python, Django, web development and databases. Open for IT placement opportunities in Ahmedabad, India.">
+  <meta name="keywords" content="Diya Panchal, MSc IT, Aspiring Software Developer, Python Developer, Django Developer, Web Development, Databases, Ahmedabad, Fresher Portfolio">
+  <meta name="author" content="Diya Panchal">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diyapanchal.dev/">
+  <meta property="og:title" content="Diya Panchal | MSc IT Student & Aspiring Software Developer">
+  <meta property="og:description" content="MSc IT student passionate about Python, Django, Web Development and Databases. Open to IT placement opportunities.">
+  <meta property="og:image" content="https://diyapanchal.dev/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Diya Panchal | MSc IT Student & Aspiring Software Developer">
+  <meta property="twitter:description" content="MSc IT student passionate about Python, Django, Web Development and Databases. Open to IT placement opportunities.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <!-- Background Decorative Grid & Glow -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <div class="bg-radial-glow glow-top" aria-hidden="true"></div>
+  <div class="bg-radial-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar-header" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Diya Panchal Home">
+        <div class="logo-mark">
+          <img src="favicon.svg" alt="DP Logo" class="brand-logo-img">
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">DIYA PANCHAL</span>
+          <span class="brand-sub">MSc IT • DEVELOPER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#what-i-do" class="nav-link">What I Do</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Toggle Color Theme" title="Toggle Light/Dark Theme">
+          <i data-lucide="sun" id="theme-icon-sun" class="theme-icon"></i>
+          <i data-lucide="moon" id="theme-icon-moon" class="theme-icon hidden"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <i data-lucide="menu" id="menu-icon-open"></i>
+          <i data-lucide="x" id="menu-icon-close" class="hidden"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Left Column -->
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="badge badge-accent animate-pulse">
+              <span class="status-dot"></span> OPEN TO IT PLACEMENT OPPORTUNITIES
+            </span>
+          </div>
+
+          <p class="hero-greeting">Hi, I'm Diya Panchal.</p>
+          <h1 class="hero-title">
+            MSc IT Student & <br>
+            <span class="text-gradient">Aspiring Software Developer</span>
+          </h1>
+
+          <p class="hero-description">
+            I'm passionate about building practical software solutions using <strong>Python</strong>, <strong>Django</strong>, web technologies and databases. I enjoy learning new technologies and solving real-world programming problems.
+          </p>
+
+          <!-- Micro Detail Chips -->
+          <div class="hero-meta-chips">
+            <span class="meta-chip"><i data-lucide="graduation-cap"></i> MSc IT • Semester 3</span>
+            <span class="meta-chip"><i data-lucide="map-pin"></i> Ahmedabad, India</span>
+            <span class="meta-chip"><i data-lucide="briefcase"></i> Available for Entry-Level Roles</span>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary btn-lg">
+              <span>View My Projects</span>
+              <i data-lucide="arrow-down-right"></i>
+            </a>
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+              <i data-lucide="file-text"></i>
+              <span>Download Resume</span>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/panchal123-diya/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/diya-panchal-b4472231b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:panchaldiya8611@gmail.com" class="social-link" aria-label="Email Address">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Sleek Developer Profile Showcase Card (No Terminal OS look) -->
+        <div class="hero-visual">
+          <div class="profile-showcase-card">
+            <div class="showcase-card-header">
+              <div class="showcase-user">
+                <div class="showcase-avatar">DP</div>
+                <div class="showcase-user-info">
+                  <h3>Diya Panchal</h3>
+                  <span class="user-role"><i data-lucide="code-2"></i> Aspiring Software Developer</span>
+                </div>
+              </div>
+              <span class="badge badge-accent"><span class="status-dot"></span> Active Aspirant</span>
+            </div>
+
+            <div class="showcase-stats-row">
+              <div class="stat-box">
+                <span class="stat-num">MSc IT</span>
+                <span class="stat-label">Semester 3</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">Major Projects</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">Ahmedabad</span>
+                <span class="stat-label">Gujarat, India</span>
+              </div>
+            </div>
+
+            <div class="showcase-tech-matrix">
+              <h4 class="matrix-title"><i data-lucide="layers"></i> Core Competencies</h4>
+              <div class="matrix-grid">
+                <div class="matrix-item">
+                  <div class="matrix-icon"><i data-lucide="terminal"></i></div>
+                  <div>
+                    <strong>Python & Django</strong>
+                    <span>Backend Development</span>
+                  </div>
+                </div>
+                <div class="matrix-item">
+                  <div class="matrix-icon"><i data-lucide="database"></i></div>
+                  <div>
+                    <strong>SQL & Relational DB</strong>
+                    <span>PostgreSQL / SQLite</span>
+                  </div>
+                </div>
+                <div class="matrix-item">
+                  <div class="matrix-icon"><i data-lucide="layout"></i></div>
+                  <div>
+                    <strong>Web Technologies</strong>
+                    <span>HTML / CSS / JavaScript</span>
+                  </div>
+                </div>
+                <div class="matrix-item">
+                  <div class="matrix-icon"><i data-lucide="sparkles"></i></div>
+                  <div>
+                    <strong>ML & NLP Basics</strong>
+                    <span>NumPy / scikit-learn</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-footer-pill">
+              <i data-lucide="check-circle-2"></i> Ready for Entry-Level Software & Placement Roles
+            </div>
+          </div>
+
+          <!-- Floating Decorative Cards -->
+          <div class="floating-card float-1">
+            <i data-lucide="shield-check"></i> Clean & Structured Code
+          </div>
+          <div class="floating-card float-2">
+            <i data-lucide="git-branch"></i> Git & GitHub Workflow
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01 / ABOUT -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">01 / ABOUT</div>
+          <h2 class="section-heading">Turning curiosity into practical technology.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-col">
+            <p class="lead-text">
+              I am an <strong>MSc IT student</strong> currently pursuing Semester 3 after completing my <strong>BCA</strong>. As an aspiring software developer, I am passionate about software engineering, web technologies, database management, and structured problem-solving.
+            </p>
+            <p>
+              I enjoy transforming ideas into practical, user-centered applications and continuously refining my technical capabilities through project development, algorithm practice, and adopting modern framework standards.
+            </p>
+            <p>
+              Currently, I am seeking an entry-level software development or IT placement opportunity where I can contribute to real-world projects, learn alongside experienced engineers, and add genuine value to a dynamic software team.
+            </p>
+          </div>
+
+          <div class="about-cards-col">
+            <div class="info-card">
+              <div class="info-icon"><i data-lucide="graduation-cap"></i></div>
+              <div class="info-details">
+                <span class="info-title">Education</span>
+                <span class="info-value">MSc IT — L.J. University</span>
+                <span class="info-sub">BCA — Shree Umiya B.C.A. Girls College</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i data-lucide="user"></i></div>
+              <div class="info-details">
+                <span class="info-title">Experience</span>
+                <span class="info-value">Fresher / Aspirant</span>
+                <span class="info-sub">Open to Entry-Level Roles</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i data-lucide="map-pin"></i></div>
+              <div class="info-details">
+                <span class="info-title">Location</span>
+                <span class="info-value">Ahmedabad, India</span>
+                <span class="info-sub">Gujarat, India</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i data-lucide="target"></i></div>
+              <div class="info-details">
+                <span class="info-title">Focus</span>
+                <span class="info-value">Software Development</span>
+                <span class="info-sub">Python, Django & Web</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 / SKILLS -->
+    <section id="skills" class="skills-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">02 / SKILLS</div>
+          <h2 class="section-heading">Technologies I work with</h2>
+          <p class="section-subheading">A breakdown of my technical domain knowledge and core competencies.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 01 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">01</span>
+              <h3>Programming</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="terminal"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-desc">Programming & Application Development</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="cpu"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-desc">Object-Oriented Programming Fundamentals</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="code"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">C</span>
+                  <span class="skill-desc">Structured Logic & Core Concepts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 02 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">02</span>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="layout-template"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 & CSS3</span>
+                  <span class="skill-desc">Semantic Markup, Styling & Grid/Flexbox</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="file-code-2"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-desc">DOM Manipulation & Async Programming</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="grid"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Bootstrap</span>
+                  <span class="skill-desc">Responsive Component Layouts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 03 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">03</span>
+              <h3>Backend</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="layers"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Django</span>
+                  <span class="skill-desc">Web Application Framework & MVT Architecture</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="webhook"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">REST APIs</span>
+                  <span class="skill-desc">API Integration & Backend Endpoint Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 04 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">04</span>
+              <h3>Database</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="database"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">PostgreSQL & MySQL</span>
+                  <span class="skill-desc">Relational Database Queries & Schema Design</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="server"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">SQLite</span>
+                  <span class="skill-desc">Lightweight Application Database Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 05 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">05</span>
+              <h3>Tools & Version Control</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="git-branch"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-desc">Version Control, Branching & Repositories</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="settings-2"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">VS Code</span>
+                  <span class="skill-desc">Development Environment & Debugging</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 06 -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <span class="cat-num">06</span>
+              <h3>AI / ML</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="brain"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">NumPy & scikit-learn</span>
+                  <span class="skill-desc">Data Processing & Basic Machine Learning</span>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-badge-icon"><i data-lucide="sparkles"></i></div>
+                <div class="skill-info">
+                  <span class="skill-name">Basic Machine Learning & NLP</span>
+                  <span class="skill-desc">Text Classification & Feature Extraction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 / EDUCATION -->
+    <section id="education" class="education-section section-padding">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">03 / EDUCATION</div>
+          <h2 class="section-heading">Academic Foundation</h2>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <!-- Item 1: MSc IT -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot active-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge-wrap">
+                <span class="badge badge-accent">Currently Pursuing — Semester 3</span>
+                <span class="badge badge-score"><i data-lucide="award"></i> Sem 1: 7.48 CGPA</span>
+                <span class="badge badge-score"><i data-lucide="award"></i> Sem 2: 8.20 CGPA</span>
+              </div>
+              <h3 class="timeline-degree">Master of Science in Information Technology (MSc IT)</h3>
+              <p class="timeline-institution"><i data-lucide="building"></i> L.J. University</p>
+              <p class="timeline-desc">
+                Engaged in advanced coursework covering Software Engineering, Enterprise Database Architecture, Web Application Development using Python & Django, and modern software design patterns.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: BCA -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrapper">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge-wrap">
+                <span class="badge badge-secondary">Completed</span>
+                <span class="badge badge-score"><i data-lucide="award"></i> Result: 74%</span>
+              </div>
+              <h3 class="timeline-degree">Bachelor of Computer Applications (BCA)</h3>
+              <p class="timeline-institution"><i data-lucide="building"></i> Shree Umiya B.C.A. Girls College (Gujarat University)</p>
+              <p class="timeline-desc">
+                Built a solid technical foundation in Computer Science fundamentals, Web Technologies (PHP, MySQL, HTML/CSS/JS), Database Systems, and completed practical software project development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 / PROJECTS -->
+    <section id="projects" class="projects-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">04 / PROJECTS</div>
+          <h2 class="section-heading">Things I've built</h2>
+          <p class="section-subheading">Practical software applications developed during my academic journey.</p>
+        </div>
+
+        <div class="projects-list">
+          <!-- PROJECT 01 -->
+          <article class="project-card">
+            <div class="project-card-inner">
+              <div class="project-info-col">
+                <div class="project-header">
+                  <div class="project-num">PROJECT 01</div>
+                  <span class="project-category">AI / Web Application</span>
+                </div>
+                
+                <h3 class="project-title">AI Resume & Job Matcher</h3>
+                <p class="project-subtitle">Automated Resume Screening & Job Matching Platform</p>
+                
+                <p class="project-description">
+                  An AI-powered resume and job matching platform designed to help users create, upload, and manage resumes while finding relevant job opportunities based on skill compatibility algorithms.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">Django</span>
+                  <span class="tech-chip">SQLite</span>
+                  <span class="tech-chip">HTML5</span>
+                  <span class="tech-chip">CSS3</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">ML / NLP</span>
+                </div>
+
+                <div class="project-features-box">
+                  <span class="features-title"><i data-lucide="check-square"></i> Key Features:</span>
+                  <ul class="features-list">
+                    <li><i data-lucide="check"></i> Dynamic Resume Builder & PDF Upload</li>
+                    <li><i data-lucide="check"></i> Automated Job Listing & Category Indexing</li>
+                    <li><i data-lucide="check"></i> Resume Screening & NLP Match Calculation</li>
+                    <li><i data-lucide="check"></i> User & Recruiter Authentication Roles</li>
+                  </ul>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-sm btn-primary open-modal-btn" data-project="project-1">
+                    <span>View Details</span>
+                    <i data-lucide="external-link"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Mock Preview Container -->
+              <div class="project-preview-col">
+                <div class="mock-preview-frame">
+                  <div class="mock-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-title">AI Matcher Dashboard</span>
+                  </div>
+                  <div class="mock-body">
+                    <div class="mock-card-metric">
+                      <div class="metric-score">88%</div>
+                      <div class="metric-label">Match Confidence Score</div>
+                    </div>
+                    <div class="mock-bars">
+                      <div class="mock-bar-item">
+                        <span>Python / Django</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div>
+                      </div>
+                      <div class="mock-bar-item">
+                        <span>SQL Databases</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+                      </div>
+                      <div class="mock-bar-item">
+                        <span>Web Frontend</span>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                      </div>
+                    </div>
+                    <div class="mock-status-pill">
+                      <i data-lucide="sparkles"></i> AI Recommendation: Strong Fit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02 -->
+          <article class="project-card">
+            <div class="project-card-inner">
+              <div class="project-info-col">
+                <div class="project-header">
+                  <div class="project-num">PROJECT 02</div>
+                  <span class="project-category">Healthcare / Django App</span>
+                </div>
+                
+                <h3 class="project-title">LifeLink</h3>
+                <p class="project-subtitle">Emergency Hospital Bed & Blood Availability Network</p>
+                
+                <p class="project-description">
+                  A Django-based platform designed to connect hospitals, blood banks, donors, and people requiring emergency medical resources in real-time during critical situations.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">Django</span>
+                  <span class="tech-chip">SQLite</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">JavaScript</span>
+                </div>
+
+                <div class="project-features-box">
+                  <span class="features-title"><i data-lucide="check-square"></i> Key Features:</span>
+                  <ul class="features-list">
+                    <li><i data-lucide="check"></i> Hospital Resource & Bed Availability Management</li>
+                    <li><i data-lucide="check"></i> Real-time Blood Bank Inventory & Donor Network</li>
+                    <li><i data-lucide="check"></i> Emergency Urgent Requests Portal</li>
+                    <li><i data-lucide="check"></i> Admin & Hospital Representative Dashboard</li>
+                  </ul>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-sm btn-primary open-modal-btn" data-project="project-2">
+                    <span>View Details</span>
+                    <i data-lucide="external-link"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Mock Preview Container -->
+              <div class="project-preview-col">
+                <div class="mock-preview-frame">
+                  <div class="mock-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-title">LifeLink Live Monitor</span>
+                  </div>
+                  <div class="mock-body">
+                    <div class="lifelink-widgets">
+                      <div class="lifelink-stat">
+                        <i data-lucide="activity" class="text-accent"></i>
+                        <div>
+                          <strong>24 ICU Beds</strong>
+                          <span>Available in Network</span>
+                        </div>
+                      </div>
+                      <div class="lifelink-stat">
+                        <i data-lucide="droplet" class="text-danger"></i>
+                        <div>
+                          <strong>O+ Blood Units</strong>
+                          <span>In Stock • Ready</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mock-alert-box">
+                      <i data-lucide="shield-alert"></i> Emergency Dispatch Sync Active
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03 -->
+          <article class="project-card">
+            <div class="project-card-inner">
+              <div class="project-info-col">
+                <div class="project-header">
+                  <div class="project-num">PROJECT 03</div>
+                  <span class="project-category">BCA E-Commerce Web App</span>
+                </div>
+                
+                <h3 class="project-title">Online Furniture Management System</h3>
+                <p class="project-subtitle">PHP & MySQL E-Commerce & Inventory Project</p>
+                
+                <p class="project-description">
+                  A web-based furniture management and catalog project developed using PHP and MySQL database during BCA at Shree Umiya B.C.A. Girls College, featuring interactive product displays, category filtering, and backend database management.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">HTML5</span>
+                  <span class="tech-chip">CSS3</span>
+                  <span class="tech-chip">JavaScript</span>
+                </div>
+
+                <div class="project-features-box">
+                  <span class="features-title"><i data-lucide="check-square"></i> Key Features:</span>
+                  <ul class="features-list">
+                    <li><i data-lucide="check"></i> Furniture Catalog & Detailed Product Listings</li>
+                    <li><i data-lucide="check"></i> Interactive Category Search & Filter</li>
+                    <li><i data-lucide="check"></i> Admin Product Inventory Management</li>
+                    <li><i data-lucide="check"></i> Clean Responsive User Interface</li>
+                  </ul>
+                </div>
+
+                <div class="project-actions">
+                  <button class="btn btn-sm btn-primary open-modal-btn" data-project="project-3">
+                    <span>View Details</span>
+                    <i data-lucide="external-link"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Mock Preview Container -->
+              <div class="project-preview-col">
+                <div class="mock-preview-frame">
+                  <div class="mock-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-title">Furniture Store Catalog</span>
+                  </div>
+                  <div class="mock-body">
+                    <div class="furniture-grid-mock">
+                      <div class="furniture-item-mock">
+                        <div class="f-icon"><i data-lucide="armchair"></i></div>
+                        <span>Ergonomic Chair</span>
+                        <strong>$180</strong>
+                      </div>
+                      <div class="furniture-item-mock">
+                        <div class="f-icon"><i data-lucide="lamp"></i></div>
+                        <span>Modern Lamp</span>
+                        <strong>$45</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05 / WHAT I DO -->
+    <section id="what-i-do" class="services-section section-padding">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">05 / WHAT I DO</div>
+          <h2 class="section-heading">How I can contribute</h2>
+          <p class="section-subheading">Core technical capabilities I bring to entry-level software development teams.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="globe"></i></div>
+            <span class="service-num">01</span>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">
+              Building responsive, accessible and user-friendly web interfaces using semantic HTML, CSS, JavaScript and Bootstrap.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="code-2"></i></div>
+            <span class="service-num">02</span>
+            <h3 class="service-title">Python Development</h3>
+            <p class="service-desc">
+              Developing practical applications, server-side logic, and web APIs using Python and the Django framework.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="database"></i></div>
+            <span class="service-num">03</span>
+            <h3 class="service-title">Database Development</h3>
+            <p class="service-desc">
+              Working with relational database management systems like PostgreSQL, SQLite, and MySQL for structured data design and queries.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card">
+            <div class="service-icon"><i data-lucide="brain"></i></div>
+            <span class="service-num">04</span>
+            <h3 class="service-title">AI / ML Projects</h3>
+            <p class="service-desc">
+              Exploring machine learning algorithms, NLP fundamentals, and numerical analysis tools like NumPy and scikit-learn through practical implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME / CAREER CTA SECTION -->
+    <section class="career-cta-section">
+      <div class="container">
+        <div class="career-cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Ready to start my professional journey?</h2>
+            <p class="cta-text">
+              I'm currently looking for IT placement and entry-level software development opportunities where I can apply my technical knowledge, learn from experienced professionals, and contribute to meaningful real-world projects.
+            </p>
+            <div class="cta-buttons">
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                <i data-lucide="download"></i>
+                <span>Download Resume</span>
+              </a>
+              <a href="#contact" class="btn btn-outline btn-lg">
+                <i data-lucide="send"></i>
+                <span>Let's Connect</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06 / CONTACT -->
+    <section id="contact" class="contact-section section-padding alt-bg">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-tag">06 / CONTACT</div>
+          <h2 class="section-heading">Let's build something together.</h2>
+          <p class="section-subheading">Whether you're a recruiter, developer, or interested in connecting, I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Information -->
+          <div class="contact-info-col">
+            <h3 class="contact-sub-title">Contact Information</h3>
+            <p class="contact-lead">
+              Feel free to reach out via email or connect with me on professional platforms. I usually respond within 24 hours.
+            </p>
+
+            <div class="contact-links-list">
+              <a href="mailto:panchaldiya8611@gmail.com" class="contact-item">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-details">
+                  <span class="label">Email Address</span>
+                  <span class="val">panchaldiya8611@gmail.com</span>
+                </div>
+              </a>
+
+              <div class="contact-item">
+                <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                <div class="contact-details">
+                  <span class="label">Location</span>
+                  <span class="val">Ahmedabad, Gujarat, India</span>
+                </div>
+              </div>
+
+              <a href="https://www.linkedin.com/in/diya-panchal-b4472231b" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="contact-details">
+                  <span class="label">LinkedIn</span>
+                  <span class="val">linkedin.com/in/diya-panchal-b4472231b</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/panchal123-diya/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="contact-details">
+                  <span class="label">GitHub</span>
+                  <span class="val">github.com/panchal123-diya/</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="contact-form-col">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/panchaldiya8611@gmail.com" method="POST">
+              <!-- FormSubmit Options -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New Portfolio Message!">
+              <input type="hidden" name="Submission_Time_IST" id="form-time-ist">
+
+              <div class="form-group">
+                <label for="form-name">Your Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i data-lucide="user" class="input-icon"></i>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                </div>
+                <span class="error-msg" id="name-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Your Email <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i data-lucide="mail" class="input-icon"></i>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. rahul@example.com" required>
+                </div>
+                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i data-lucide="message-square" class="input-icon textarea-icon"></i>
+                  <textarea id="form-message" name="message" class="form-input form-textarea" rows="4" placeholder="Hello Diya, I'd like to discuss an opportunity..." required></textarea>
+                </div>
+                <span class="error-msg" id="message-error">Please enter your message.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                <span>Send Message</span>
+                <i data-lucide="send"></i>
+              </button>
+
+              <div id="form-feedback" class="form-feedback hidden"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-mark">
+            <img src="favicon.svg" alt="DP Logo" class="brand-logo-img">
+          </div>
+          <div>
+            <h3 class="footer-name">DIYA PANCHAL</h3>
+            <p class="footer-tagline">MSc IT Student • Aspiring Software Developer</p>
+          </div>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/panchal123-diya/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/diya-panchal-b4472231b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:panchaldiya8611@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Diya Panchal. All rights reserved. • Built with passion & code.</p>
+        <div class="visitor-counter-box" title="Profile View Counter">
+          <i data-lucide="eye"></i>
+          <span>Profile Views: <strong id="visitor-count">1,248</strong></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal Dialog -->
+  <div id="project-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modal-content-body" class="modal-body">
+        <!-- Content inserted dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize Lucide Icons after DOM load
+    lucide.createIcons();
+  </script>
+</body>
+</html>
