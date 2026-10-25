@@ -374,4 +374,291 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealTargets.forEach(el => el.classList.add('revealed'));
   }
+<<<<<<< HEAD
+=======
+
+  /* --------------------------------------------------------------------------
+     10. CUSTOM ANIMATED CURSOR ENGINE (DATHEON-INSPIRED)
+     -------------------------------------------------------------------------- */
+  function initCustomCursor() {
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+
+    if (!cursorDot || !cursorRing) return;
+
+    // Check device capabilities: only enable on devices supporting hover and fine pointer
+    const finePointerMedia = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    let isEnabled = finePointerMedia.matches && !reducedMotionMedia.matches;
+
+    if (!isEnabled) {
+      cursorDot.style.display = 'none';
+      cursorRing.style.display = 'none';
+      return;
+    }
+
+    // Coordinates and interpolation targets
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+
+    let targetScale = 1;
+    let currentScale = 1;
+    let dotScale = 1;
+    let currentDotScale = 1;
+
+    let isHovered = false;
+    let isTextMode = false;
+    let isMouseDown = false;
+    let isVisible = false;
+    let animationFrameId = null;
+
+    // Selector for interactive clickable elements
+    const interactiveSelector = [
+      'a',
+      'button',
+      'input',
+      'textarea',
+      'select',
+      '[role="button"]',
+      '.btn',
+      '.icon-btn',
+      '.nav-link',
+      '.open-modal-btn',
+      '.modal-close-btn',
+      '.social-link',
+      '.contact-item',
+      '.project-card',
+      '.info-card',
+      '.skill-category-card',
+      '.service-card',
+      '.timeline-item',
+      '.stat-box',
+      '.mock-preview-frame',
+      '.logo-mark'
+    ].join(', ');
+
+    // Smooth RAF Animation Loop
+    function render() {
+      if (isVisible) {
+        // Linear interpolation (LERP) for fluid trailing ring
+        ringX += (mouseX - ringX) * 0.16;
+        ringY += (mouseY - ringY) * 0.16;
+
+        // Smooth scale interpolation
+        currentScale += (targetScale - currentScale) * 0.18;
+        currentDotScale += (dotScale - currentDotScale) * 0.2;
+
+        // Hardware-accelerated transforms
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%) scale(${currentDotScale})`;
+        cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${currentScale})`;
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    }
+
+    // Pointer movement handler
+    function onMouseMove(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isVisible) {
+        isVisible = true;
+        ringX = mouseX;
+        ringY = mouseY;
+        cursorDot.classList.add('cursor-visible');
+        cursorRing.classList.add('cursor-visible');
+        cursorDot.classList.remove('cursor-hidden');
+        cursorRing.classList.remove('cursor-hidden');
+      }
+    }
+
+    // Mouse leave / enter window
+    function onMouseLeave() {
+      cursorDot.classList.add('cursor-hidden');
+      cursorRing.classList.add('cursor-hidden');
+    }
+
+    function onMouseEnter() {
+      if (isVisible) {
+        cursorDot.classList.remove('cursor-hidden');
+        cursorRing.classList.remove('cursor-hidden');
+      }
+    }
+
+    // Event delegation for interactive hover states
+    function onMouseOver(e) {
+      const target = e.target;
+      if (!target) return;
+
+      const isText = target.matches('input[type="text"], input[type="email"], textarea');
+      const interactiveEl = target.closest(interactiveSelector);
+
+      if (isText) {
+        isTextMode = true;
+        isHovered = false;
+        targetScale = 0.6;
+        dotScale = 0.7;
+        cursorRing.classList.add('cursor-text');
+        cursorDot.classList.add('cursor-text');
+        cursorRing.classList.remove('cursor-hover');
+        cursorDot.classList.remove('cursor-hover');
+      } else if (interactiveEl) {
+        isHovered = true;
+        isTextMode = false;
+        targetScale = 1.45;
+        dotScale = 1.35;
+        cursorRing.classList.add('cursor-hover');
+        cursorDot.classList.add('cursor-hover');
+        cursorRing.classList.remove('cursor-text');
+        cursorDot.classList.remove('cursor-text');
+      }
+    }
+
+    function onMouseOut(e) {
+      const related = e.relatedTarget;
+      // If moving within the same interactive element or text input, keep state
+      if (related && related.closest(interactiveSelector)) return;
+
+      isHovered = false;
+      isTextMode = false;
+      targetScale = isMouseDown ? 0.85 : 1;
+      dotScale = isMouseDown ? 0.9 : 1;
+      cursorRing.classList.remove('cursor-hover', 'cursor-text');
+      cursorDot.classList.remove('cursor-hover', 'cursor-text');
+    }
+
+    // Active click interaction
+    function onMouseDown() {
+      isMouseDown = true;
+      targetScale = isHovered ? 1.15 : 0.85;
+      dotScale = 0.85;
+      cursorRing.classList.add('cursor-active');
+    }
+
+    function onMouseUp() {
+      isMouseDown = false;
+      targetScale = isHovered ? 1.45 : (isTextMode ? 0.6 : 1);
+      dotScale = isHovered ? 1.35 : (isTextMode ? 0.7 : 1);
+      cursorRing.classList.remove('cursor-active');
+    }
+
+    // Bind event listeners
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    document.addEventListener('mouseleave', onMouseLeave);
+    document.addEventListener('mouseenter', onMouseEnter);
+    document.addEventListener('mouseover', onMouseOver, { passive: true });
+    document.addEventListener('mouseout', onMouseOut, { passive: true });
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+
+    window.addEventListener('blur', onMouseLeave);
+    window.addEventListener('focus', onMouseEnter);
+
+    // Start render loop
+    animationFrameId = requestAnimationFrame(render);
+
+    // Dynamic responsive cleanup / toggle if user resizes or changes preferences
+    function handleMediaChange() {
+      const currentlyEnabled = finePointerMedia.matches && !reducedMotionMedia.matches;
+      if (!currentlyEnabled && isEnabled) {
+        isEnabled = false;
+        isVisible = false;
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        cursorDot.style.display = 'none';
+        cursorRing.style.display = 'none';
+      } else if (currentlyEnabled && !isEnabled) {
+        isEnabled = true;
+        cursorDot.style.display = 'block';
+        cursorRing.style.display = 'block';
+        animationFrameId = requestAnimationFrame(render);
+      }
+    }
+
+    finePointerMedia.addEventListener('change', handleMediaChange);
+    reducedMotionMedia.addEventListener('change', handleMediaChange);
+  }
+
+  // Initialize cursor
+  initCustomCursor();
+
+  /* --------------------------------------------------------------------------
+     11. 1-CLICK COPY EMAIL & TOAST NOTIFICATION
+     -------------------------------------------------------------------------- */
+  const copyButtons = document.querySelectorAll('.copy-email-btn');
+  const toastNotification = document.getElementById('toast-notification');
+  const toastMessage = document.getElementById('toast-message');
+  let toastTimeout = null;
+
+  function showToast(message = 'Copied to clipboard! 📋') {
+    if (!toastNotification) return;
+
+    if (toastMessage) {
+      toastMessage.textContent = message;
+    }
+
+    toastNotification.classList.add('show');
+
+    if (toastTimeout) {
+      clearTimeout(toastTimeout);
+    }
+
+    toastTimeout = setTimeout(() => {
+      toastNotification.classList.remove('show');
+    }, 3200);
+  }
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const email = btn.getAttribute('data-email') || 'panchaldiya8611@gmail.com';
+
+      const performCopySuccess = () => {
+        showToast('Copied to clipboard! 📋');
+
+        const originalHTML = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = '<i data-lucide="check"></i> <span>Copied!</span>';
+        if (window.lucide) window.lucide.createIcons();
+
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalHTML;
+          if (window.lucide) window.lucide.createIcons();
+        }, 2200);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email)
+          .then(performCopySuccess)
+          .catch(() => fallbackCopy(email, performCopySuccess));
+      } else {
+        fallbackCopy(email, performCopySuccess);
+      }
+    });
+  });
+
+  function fallbackCopy(text, callback) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      if (callback) callback();
+    } catch (err) {
+      showToast('Email: ' + text);
+    }
+    document.body.removeChild(textArea);
+  }
+>>>>>>> 1863d18 (Update portfolio design)
 });
