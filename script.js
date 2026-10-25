@@ -374,8 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealTargets.forEach(el => el.classList.add('revealed'));
   }
-<<<<<<< HEAD
-=======
 
   /* --------------------------------------------------------------------------
      10. CUSTOM ANIMATED CURSOR ENGINE (DATHEON-INSPIRED)
@@ -660,5 +658,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.body.removeChild(textArea);
   }
->>>>>>> 1863d18 (Update portfolio design)
 });
