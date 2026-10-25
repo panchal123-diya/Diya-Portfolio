@@ -2226,3 +2226,375 @@ html, body {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
+<<<<<<< HEAD
+=======
+
+/* ==========================================================================
+   10. PREMIUM CUSTOM ANIMATED CURSOR (DATHEON-INSPIRED)
+   ========================================================================== */
+
+/* Hidden by default (for touch screens, mobile devices, and screen readers) */
+.cursor-dot,
+.cursor-ring {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none !important;
+  z-index: 999999;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Enable custom cursor elements on fine pointer devices */
+  .cursor-dot,
+  .cursor-ring {
+    display: block;
+  }
+
+  /* Hide default cursor globally on interactive and body elements */
+  body,
+  a,
+  button,
+  .btn,
+  .icon-btn,
+  .nav-link,
+  .social-link,
+  .contact-item,
+  .open-modal-btn,
+  .modal-close-btn,
+  .back-to-top,
+  .mobile-menu-btn,
+  [role="button"] {
+    cursor: none !important;
+  }
+
+  /* Retain standard text cursor on text input fields for accessibility */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    cursor: text !important;
+  }
+}
+
+/* Center Glowing Cyan Dot */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-cyan, #38bdf8);
+  box-shadow: 
+    0 0 10px rgba(56, 189, 248, 0.95),
+    0 0 20px rgba(56, 189, 248, 0.5);
+  transition: 
+    opacity 0.25s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Outer Trailing Ring */
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  background-color: rgba(56, 189, 248, 0.04);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  transition: 
+    opacity 0.3s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Visible State (after initial mouse movement) */
+.cursor-dot.cursor-visible,
+.cursor-ring.cursor-visible {
+  opacity: 1;
+}
+
+/* Hidden State (when leaving window or focus lost) */
+.cursor-dot.cursor-hidden,
+.cursor-ring.cursor-hidden {
+  opacity: 0 !important;
+}
+
+/* Hover State over Clickable Elements */
+.cursor-dot.cursor-hover {
+  background-color: #67e8f9;
+  box-shadow: 
+    0 0 14px rgba(56, 189, 248, 1),
+    0 0 28px rgba(56, 189, 248, 0.75);
+}
+
+.cursor-ring.cursor-hover {
+  border-color: rgba(56, 189, 248, 0.85);
+  background-color: rgba(56, 189, 248, 0.12);
+  box-shadow: 
+    0 0 20px rgba(56, 189, 248, 0.35),
+    inset 0 0 8px rgba(56, 189, 248, 0.1);
+}
+
+/* Active Click Pinch State */
+.cursor-ring.cursor-active {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.22);
+}
+
+/* Text Input Subtle State */
+.cursor-dot.cursor-text {
+  opacity: 0.3;
+}
+
+.cursor-ring.cursor-text {
+  border-color: rgba(56, 189, 248, 0.25);
+  background-color: transparent;
+  opacity: 0.35;
+}
+
+/* Light Theme Styling Adaptation */
+[data-theme="light"] .cursor-dot {
+  background-color: #0284c7;
+  box-shadow: 
+    0 0 8px rgba(2, 132, 199, 0.85),
+    0 0 16px rgba(2, 132, 199, 0.4);
+}
+
+[data-theme="light"] .cursor-ring {
+  border-color: rgba(2, 132, 199, 0.5);
+  background-color: rgba(2, 132, 199, 0.05);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.12);
+}
+
+[data-theme="light"] .cursor-dot.cursor-hover {
+  background-color: #0369a1;
+  box-shadow: 
+    0 0 12px rgba(2, 132, 199, 1),
+    0 0 22px rgba(2, 132, 199, 0.55);
+}
+
+[data-theme="light"] .cursor-ring.cursor-hover {
+  border-color: rgba(2, 132, 199, 0.85);
+  background-color: rgba(2, 132, 199, 0.12);
+  box-shadow: 0 0 16px rgba(2, 132, 199, 0.25);
+}
+
+/* Respect Reduced Motion Accessibility Settings */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+  body,
+  a,
+  button,
+  input,
+  textarea {
+    cursor: auto !important;
+  }
+}
+
+/* ==========================================================================
+   11. RESUME BADGE TAG & 1-CLICK COPY EMAIL TOAST SYSTEM
+   ========================================================================== */
+
+/* Resume Button Micro-Tag */
+.btn-resume {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-right: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.resume-badge-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--accent-cyan, #38bdf8);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  white-space: nowrap;
+  line-height: 1.2;
+  transition: all var(--transition-fast);
+}
+
+.btn-resume:hover .resume-badge-tag {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.btn-primary .resume-badge-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-primary:hover .resume-badge-tag {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="light"] .resume-badge-tag {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+  border-color: rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .btn-primary .resume-badge-tag {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Contact Item Interactive with Copy Button */
+.contact-item-interactive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.85rem 1.15rem;
+}
+
+.contact-main-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.contact-main-link:hover .val {
+  color: var(--accent-cyan);
+}
+
+.copy-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.copy-email-btn:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.copy-email-btn.copied {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.copy-email-btn i {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hero Quick Copy Pill */
+.hero-copy-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero-copy-pill:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+}
+
+.hero-copy-pill.copied {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+
+.hero-copy-pill i {
+  width: 13px;
+  height: 13px;
+}
+
+/* Floating Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.4rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 20px rgba(56, 189, 248, 0.25);
+  font-size: 0.925rem;
+  font-weight: 600;
+  z-index: 1000000;
+  opacity: 0;
+  transform: translateY(24px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.toast-notification .toast-icon {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .toast-notification {
+    bottom: 20px;
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+  }
+}
+
+
+>>>>>>> 1863d18 (Update portfolio design)
