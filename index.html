@@ -41,6 +41,10 @@
 </head>
 <body>
 
+  <!-- Custom Animated Cursor Elements (Datheon-Inspired Cyan Dot & Trailing Ring) -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
   <!-- Reading Progress Bar -->
   <div id="scroll-progress" class="scroll-progress"></div>
 
@@ -129,9 +133,10 @@
               <span>View My Projects</span>
               <i data-lucide="arrow-down-right"></i>
             </a>
-            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg btn-resume">
               <i data-lucide="file-text"></i>
               <span>Download Resume</span>
+              <span class="resume-badge-tag">PDF • Updated 2026</span>
             </a>
           </div>
 
@@ -144,9 +149,13 @@
             <a href="https://www.linkedin.com/in/diya-panchal-b4472231b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="mailto:panchaldiya8611@gmail.com" class="social-link" aria-label="Email Address">
+            <a href="mailto:panchaldiya8611@gmail.com" class="social-link" aria-label="Email Address" title="Send email to panchaldiya8611@gmail.com">
               <i class="fa-solid fa-envelope"></i>
             </a>
+            <button type="button" class="hero-copy-pill copy-email-btn" data-email="panchaldiya8611@gmail.com" title="Copy email address to clipboard">
+              <i data-lucide="copy"></i>
+              <span>Copy Email</span>
+            </button>
           </div>
         </div>
 
@@ -818,9 +827,10 @@
               I'm currently looking for IT placement and entry-level software development opportunities where I can apply my technical knowledge, learn from experienced professionals, and contribute to meaningful real-world projects.
             </p>
             <div class="cta-buttons">
-              <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-resume">
                 <i data-lucide="download"></i>
                 <span>Download Resume</span>
+                <span class="resume-badge-tag">PDF • Updated 2026</span>
               </a>
               <a href="#contact" class="btn btn-outline btn-lg">
                 <i data-lucide="send"></i>
@@ -850,13 +860,19 @@
             </p>
 
             <div class="contact-links-list">
-              <a href="mailto:panchaldiya8611@gmail.com" class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="contact-details">
-                  <span class="label">Email Address</span>
-                  <span class="val">panchaldiya8611@gmail.com</span>
-                </div>
-              </a>
+              <div class="contact-item contact-item-interactive">
+                <a href="mailto:panchaldiya8611@gmail.com" class="contact-main-link" aria-label="Send email to Diya Panchal">
+                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="contact-details">
+                    <span class="label">Email Address</span>
+                    <span class="val">panchaldiya8611@gmail.com</span>
+                  </div>
+                </a>
+                <button type="button" class="copy-email-btn" data-email="panchaldiya8611@gmail.com" title="Copy email address" aria-label="Copy email address to clipboard">
+                  <i data-lucide="copy" class="copy-icon"></i>
+                  <span class="copy-btn-text">Copy</span>
+                </button>
+              </div>
 
               <div class="contact-item">
                 <div class="contact-icon"><i data-lucide="map-pin"></i></div>
@@ -980,6 +996,12 @@
   <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
     <i data-lucide="arrow-up"></i>
   </button>
+
+  <!-- Global Toast Notification for Copy Feedback -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="toast-icon"></i>
+    <span id="toast-message">Copied to clipboard! 📋</span>
+  </div>
 
   <script src="script.js"></script>
   <script>
